@@ -2,7 +2,7 @@ import Button from "./Button";
 
 function App() {
   return (
-    <main>
+    <main className="mt-12 grid justify-center gap-2">
       <section>
         <p>10000 + {/* demo text */}</p>
         <p>10000 {/* demo text */}</p>
