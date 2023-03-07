@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .grid-template {
+    --output: 5.5rem;
+    --input: 5rem;
+    grid-template: minmax(var(--output), auto) repeat(5, var(--input)) / repeat(
+        4,
+        var(--input)
+      );
+  }
+}
