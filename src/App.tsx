@@ -5,8 +5,8 @@ function App() {
   return (
     <main className="mt-12 grid justify-center gap-2 grid-template">
       <section className="col-span-full bg-blue-400 flex flex-col justify-center items-end px-4 py-2">
-        <P classes="text-lg">10000 + {/* demo text */}</P>
-        <P classes="text-3xl">10000 {/* demo text */}</P>
+        <P classes="text-lg text-gray-100">10000 + {/* demo text */}</P>
+        <P classes="text-3xl text-white">10000 {/* demo text */}</P>
       </section>
       <Button click={() => {}} value="C" span="col-span-2" />
       <Button click={() => {}} value="DE" />
