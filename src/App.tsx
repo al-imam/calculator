@@ -1,5 +1,12 @@
 function App() {
-  return <main className="bg-gray-900 h-screen"></main>;
+  return (
+    <main>
+      <section>
+        <p>10000 + {/* demo text */}</p>
+        <p>10000 {/* demo text */}</p>
+      </section>
+    </main>
+  );
 }
 
 export default App;
