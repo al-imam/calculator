@@ -8,7 +8,7 @@ function App() {
         <P classes="text-lg">10000 + {/* demo text */}</P>
         <P classes="text-3xl">10000 {/* demo text */}</P>
       </section>
-      <Button click={() => {}} value="C" />
+      <Button click={() => {}} value="C" span="col-span-2" />
       <Button click={() => {}} value="DE" />
       <Button click={() => {}} value="/" />
       <Button click={() => {}} value="1" />
@@ -25,7 +25,7 @@ function App() {
       <Button click={() => {}} value="+" />
       <Button click={() => {}} value="." />
       <Button click={() => {}} value="0" />
-      <Button click={() => {}} value="=" />
+      <Button click={() => {}} value="=" span="col-span-2" />
     </main>
   );
 }
