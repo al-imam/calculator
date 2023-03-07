@@ -4,7 +4,7 @@ import P from "./components/P";
 function App() {
   return (
     <main className="mt-12 grid justify-center gap-2 grid-template">
-      <section>
+      <section className="col-span-full">
         <P classes="text-lg">10000 + {/* demo text */}</P>
         <P classes="text-3xl">10000 {/* demo text */}</P>
       </section>
