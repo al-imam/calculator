@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 function App() {
   return (
     <main>
@@ -5,6 +7,7 @@ function App() {
         <p>10000 + {/* demo text */}</p>
         <p>10000 {/* demo text */}</p>
       </section>
+      <Button click={() => {}} value="0" />
     </main>
   );
 }
