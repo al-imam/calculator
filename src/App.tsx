@@ -1,11 +1,12 @@
-import Button from "./Button";
+import Button from "./components/Button";
+import P from "./components/P";
 
 function App() {
   return (
     <main className="mt-12 grid justify-center gap-2">
       <section>
-        <p>10000 + {/* demo text */}</p>
-        <p>10000 {/* demo text */}</p>
+        <P>10000 + {/* demo text */}</P>
+        <P>10000 {/* demo text */}</P>
       </section>
       <Button click={() => {}} value="C" />
       <Button click={() => {}} value="DE" />
