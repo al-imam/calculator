@@ -5,8 +5,8 @@ function App() {
   return (
     <main className="mt-12 grid justify-center gap-2">
       <section>
-        <P>10000 + {/* demo text */}</P>
-        <P>10000 {/* demo text */}</P>
+        <P classes="text-lg">10000 + {/* demo text */}</P>
+        <P classes="text-3xl">10000 {/* demo text */}</P>
       </section>
       <Button click={() => {}} value="C" />
       <Button click={() => {}} value="DE" />
