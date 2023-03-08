@@ -14,18 +14,18 @@ function App() {
       <Button click={() => {}} value="1" />
       <Button click={() => {}} value="2" />
       <Button click={() => {}} value="3" />
-      <Button click={() => {}} value="*" />
+      <Button click={() => {}} value="*" span="font-mono" />
       <Button click={() => {}} value="4" />
       <Button click={() => {}} value="5" />
       <Button click={() => {}} value="6" />
-      <Button click={() => {}} value="-" />
+      <Button click={() => {}} value="-" span="font-mono" />
       <Button click={() => {}} value="7" />
       <Button click={() => {}} value="8" />
       <Button click={() => {}} value="9" />
-      <Button click={() => {}} value="+" />
-      <Button click={() => {}} value="." />
+      <Button click={() => {}} value="+" span="font-mono" />
+      <Button click={() => {}} value="." span="font-mono" />
       <Button click={() => {}} value="0" />
-      <Button click={() => {}} value="=" span="col-span-2" />
+      <Button click={() => {}} value="=" span="col-span-2 font-mono" />
     </main>
   );
 }
