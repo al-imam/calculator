@@ -16,8 +16,10 @@ function App() {
   return (
     <main className="mt-12 grid justify-center gap-2 grid-template">
       <section className="col-span-full bg-blue-400 flex flex-col justify-center items-end p-4 rounded">
-        <P classes="text-xl text-gray-100">10000 + {/* demo text */}</P>
-        <P classes="text-4xl text-white">10000 {/* demo text */}</P>
+        <P classes="text-xl text-gray-100">
+          {previousOperand} {operator}
+        </P>
+        <P classes="text-4xl text-white">{currentOperand}</P>
       </section>
       <Button click={() => {}} value="C" span="col-span-2" />
       <Button click={() => {}} value="DE" />
