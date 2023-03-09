@@ -2,7 +2,13 @@ import Button from "./components/Button";
 import P from "./components/P";
 import { useReducer } from "react";
 
-const initialValue = {
+interface CalculatorState {
+  currentOperand: string | null;
+  previousOperand: string | null;
+  operator: string | null;
+}
+
+const initialValue: CalculatorState = {
   currentOperand: null,
   previousOperand: null,
   operator: null,
