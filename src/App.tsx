@@ -33,7 +33,7 @@ type NoUndefinedField<T> = {
   [P in keyof T]: NoUndefinedField<NonNullable<T[P]>>;
 };
 
-function calculate(state: NoUndefinedField<CalculatorState>) {
+function calculate(state: NoUndefinedField<CalculatorState>): number {
   const { operator } = state;
   const currentOperand = parseFloat(state.currentOperand);
   const previousOperand = parseFloat(state.previousOperand);
@@ -41,6 +41,9 @@ function calculate(state: NoUndefinedField<CalculatorState>) {
   switch (operator) {
     case "+":
       return previousOperand + currentOperand;
+
+    default:
+      throw new Error(`Can not compute ${operator}`);
   }
 }
 
