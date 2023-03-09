@@ -25,7 +25,7 @@ type ActionType =
 
 interface CalculatorAction {
   type: ActionType;
-  payload: string;
+  payload?: string;
 }
 
 function reducer(state: CalculatorState, action: CalculatorAction) {
@@ -62,7 +62,11 @@ function App() {
         </P>
         <P classes="text-4xl text-white">{currentOperand}</P>
       </section>
-      <Button click={() => {}} value="C" span="col-span-2" />
+      <Button
+        click={() => dispatch({ type: "clear" })}
+        value="C"
+        span="col-span-2"
+      />
       <Button click={() => {}} value="DE" />
       <Button click={() => {}} value="÷" span="font-mono" />
       <Button
