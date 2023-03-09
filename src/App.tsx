@@ -97,6 +97,7 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
 
       if (currentOperand !== null && previousOperand !== null) {
         return {
+          override: true,
           operator: payload as Exclude<Operator, null>,
           previousOperand: null,
           currentOperand: `${calculate(
@@ -106,6 +107,7 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
       }
 
       return {
+        override: true,
         operator: payload as Exclude<Operator, null>,
         previousOperand: currentOperand,
         currentOperand: null,
@@ -121,6 +123,7 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
       }
 
       return {
+        override: true,
         operator: null,
         previousOperand: null,
         currentOperand: `${calculate(
