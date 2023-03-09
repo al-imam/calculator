@@ -10,24 +10,34 @@ interface CalculatorState {
   operator: StringOrNull;
 }
 
-type ActionType = "add-digit" | "clear" | "delete" | "calculate" | "operator";
-
-interface CalculatorAction {
-  type: ActionType;
-  payload: Partial<CalculatorState>;
-}
-
 const initialValue: CalculatorState = {
   currentOperand: null,
   previousOperand: null,
   operator: null,
 };
 
+type ActionType =
+  | "add-digit"
+  | "clear"
+  | "delete"
+  | "calculate"
+  | "add-operator";
+
+interface CalculatorAction {
+  type: ActionType;
+  payload: Partial<CalculatorState>;
+}
+
+function reducer(state: CalculatorState, action: CalculatorAction) {
+  return state;
+}
+
 function App() {
   const [{ currentOperand, previousOperand, operator }, dispatch] = useReducer(
-    () => initialValue,
+    reducer,
     initialValue
   );
+
   return (
     <main className="mt-12 grid justify-center gap-2 grid-template">
       <section className="col-span-full bg-blue-400 flex flex-col justify-center items-end p-4 rounded">
