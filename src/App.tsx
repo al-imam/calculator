@@ -37,14 +37,14 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
     case "add-digit":
       if (payload === "0" && currentOperand === "0") return state;
 
-      if (payload === "." && currentOperand && currentOperand.includes(".")) {
-        return state;
+      if (payload === ".") {
+        if (currentOperand === null) return { ...state, currentOperand: "0." };
+        if (currentOperand && currentOperand.includes(".")) return state;
       }
 
       return {
+        ...state,
         currentOperand: (currentOperand ?? "") + payload,
-        previousOperand,
-        operator,
       };
 
     case "clear":
