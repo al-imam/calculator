@@ -209,7 +209,11 @@ function App() {
         click={() => dispatch({ type: "add-digit", payload: "0" })}
         value="0"
       />
-      <Button click={() => {}} value="=" span="col-span-2 font-mono" />
+      <Button
+        click={() => dispatch({ type: "calculate" })}
+        value="="
+        span="col-span-2 font-mono"
+      />
     </main>
   );
 }
