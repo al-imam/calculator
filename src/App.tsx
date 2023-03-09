@@ -9,6 +9,10 @@ const initialValue = {
 };
 
 function App() {
+  const [{ currentOperand, previousOperand, operator }, dispatch] = useReducer(
+    () => initialValue,
+    initialValue
+  );
   return (
     <main className="mt-12 grid justify-center gap-2 grid-template">
       <section className="col-span-full bg-blue-400 flex flex-col justify-center items-end p-4 rounded">
