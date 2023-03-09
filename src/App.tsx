@@ -48,6 +48,8 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
       };
 
     case "add-operator":
+      if (currentOperand === null && previousOperand === null) return state;
+
       return {
         operator: payload as string,
         previousOperand: currentOperand,
