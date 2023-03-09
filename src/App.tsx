@@ -93,6 +93,15 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
         currentOperand: null,
       };
 
+    case "calculate":
+      return {
+        operator: null,
+        previousOperand: null,
+        currentOperand: `${calculate(
+          state as NoUndefinedField<CalculatorState>
+        )}`,
+      };
+
     case "delete":
       if (currentOperand === null) return state;
 
