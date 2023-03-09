@@ -91,7 +91,7 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
         };
       }
 
-      if (currentOperand === "0." || currentOperand === "0") return state;
+      if (parseFloat(currentOperand || "0") === 0) return state;
 
       if (currentOperand !== null && previousOperand !== null) {
         return {
