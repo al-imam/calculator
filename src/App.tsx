@@ -65,19 +65,50 @@ function App() {
         click={() => dispatch({ type: "add-digit", payload: "1" })}
         value="1"
       />
-      <Button click={() => {}} value="2" />
-      <Button click={() => {}} value="3" />
+      <Button
+        click={() => dispatch({ type: "add-digit", payload: "2" })}
+        value="2"
+      />
+      <Button
+        click={() => dispatch({ type: "add-digit", payload: "3" })}
+        value="3"
+      />
       <Button click={() => {}} value="*" span="font-mono" />
-      <Button click={() => {}} value="4" />
-      <Button click={() => {}} value="5" />
-      <Button click={() => {}} value="6" />
+      <Button
+        click={() => dispatch({ type: "add-digit", payload: "4" })}
+        value="4"
+      />
+      <Button
+        click={() => dispatch({ type: "add-digit", payload: "5" })}
+        value="5"
+      />
+      <Button
+        click={() => dispatch({ type: "add-digit", payload: "6" })}
+        value="6"
+      />
       <Button click={() => {}} value="-" span="font-mono" />
-      <Button click={() => {}} value="7" />
-      <Button click={() => {}} value="8" />
-      <Button click={() => {}} value="9" />
+      <Button
+        click={() => dispatch({ type: "add-digit", payload: "7" })}
+        value="7"
+      />
+      <Button
+        click={() => dispatch({ type: "add-digit", payload: "8" })}
+        value="8"
+      />
+      <Button
+        click={() => dispatch({ type: "add-digit", payload: "9" })}
+        value="9"
+      />
       <Button click={() => {}} value="+" span="font-mono" />
-      <Button click={() => {}} value="." span="font-mono" />
-      <Button click={() => {}} value="0" />
+      <Button
+        click={() => dispatch({ type: "add-digit", payload: "." })}
+        value="."
+        span="font-mono"
+      />
+      <Button
+        click={() => dispatch({ type: "add-digit", payload: "0" })}
+        value="0"
+      />
       <Button click={() => {}} value="=" span="col-span-2 font-mono" />
     </main>
   );
