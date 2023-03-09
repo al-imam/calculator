@@ -47,6 +47,13 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
         currentOperand: (currentOperand ?? "") + payload,
       };
 
+    case "add-operator":
+      return {
+        operator: payload as string,
+        previousOperand: currentOperand,
+        currentOperand: null,
+      };
+
     case "delete":
       if (currentOperand === null) return state;
 
