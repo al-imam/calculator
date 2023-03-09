@@ -12,6 +12,11 @@ interface CalculatorState {
 
 type ActionType = "add-digit" | "clear" | "delete" | "calculate" | "operator";
 
+interface CalculatorAction {
+  type: ActionType;
+  payload: Partial<CalculatorState>;
+}
+
 const initialValue: CalculatorState = {
   currentOperand: null,
   previousOperand: null,
