@@ -136,6 +136,10 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
       };
 
     case "delete":
+      if (override) {
+        return { ...state, currentOperand: null, override: false };
+      }
+
       if (currentOperand === null) return state;
 
       if (currentOperand.length === 1) {
