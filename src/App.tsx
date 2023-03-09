@@ -61,9 +61,15 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
     state: { currentOperand, previousOperand, operator },
     action: { type, payload },
   } = { state, action };
+
   switch (type) {
     case "add-digit":
-      if (payload === "0" && currentOperand === "0") return state;
+      if (currentOperand === "0" && payload !== ".") {
+        return {
+          ...state,
+          currentOperand: payload as string,
+        };
+      }
 
       if (payload === ".") {
         if (currentOperand === null) return { ...state, currentOperand: "0." };
