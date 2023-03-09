@@ -87,6 +87,16 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
 
       if (currentOperand === "0." || currentOperand === "0") return state;
 
+      if (currentOperand !== null && previousOperand !== null) {
+        return {
+          operator: payload as Exclude<Operator, null>,
+          previousOperand: null,
+          currentOperand: `${calculate(
+            state as NoUndefinedField<CalculatorState>
+          )}`,
+        };
+      }
+
       return {
         operator: payload as Exclude<Operator, null>,
         previousOperand: currentOperand,
