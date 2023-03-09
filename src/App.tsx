@@ -33,6 +33,17 @@ type NoUndefinedField<T> = {
   [P in keyof T]: NoUndefinedField<NonNullable<T[P]>>;
 };
 
+function calculate(state: NoUndefinedField<CalculatorState>) {
+  const { operator } = state;
+  const currentOperand = parseFloat(state.currentOperand);
+  const previousOperand = parseFloat(state.previousOperand);
+
+  switch (operator) {
+    case "+":
+      return previousOperand + currentOperand;
+  }
+}
+
 function reducer(state: CalculatorState, action: CalculatorAction) {
   const {
     state: { currentOperand, previousOperand, operator },
