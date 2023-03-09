@@ -1,5 +1,12 @@
 import Button from "./components/Button";
 import P from "./components/P";
+import { useReducer } from "react";
+
+const initialValue = {
+  currentOperand: null,
+  previousOperand: null,
+  operator: null,
+};
 
 function App() {
   return (
