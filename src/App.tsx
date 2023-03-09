@@ -3,11 +3,12 @@ import P from "./components/P";
 import { useReducer } from "react";
 
 type StringOrNull = string | null;
+type Operator = "+" | "-" | "÷" | "*" | null;
 
 interface CalculatorState {
   currentOperand: StringOrNull;
   previousOperand: StringOrNull;
-  operator: StringOrNull;
+  operator: Operator;
 }
 
 const initialValue: CalculatorState = {
@@ -57,14 +58,14 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
       if (currentOperand === null) {
         return {
           ...state,
-          operator: payload as string,
+          operator: payload as Exclude<Operator, null>,
         };
       }
 
       if (currentOperand === "0." || currentOperand === "0") return state;
 
       return {
-        operator: payload as string,
+        operator: payload as Exclude<Operator, null>,
         previousOperand: currentOperand,
         currentOperand: null,
       };
