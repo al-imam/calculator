@@ -2,10 +2,12 @@ import Button from "./components/Button";
 import P from "./components/P";
 import { useReducer } from "react";
 
+type StringOrNull = string | null;
+
 interface CalculatorState {
-  currentOperand: string | null;
-  previousOperand: string | null;
-  operator: string | null;
+  currentOperand: StringOrNull;
+  previousOperand: StringOrNull;
+  operator: StringOrNull;
 }
 
 const initialValue: CalculatorState = {
