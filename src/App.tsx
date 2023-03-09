@@ -50,6 +50,13 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
     case "add-operator":
       if (currentOperand === null && previousOperand === null) return state;
 
+      if (currentOperand === null) {
+        return {
+          ...state,
+          operator: payload as string,
+        };
+      }
+
       return {
         operator: payload as string,
         previousOperand: currentOperand,
