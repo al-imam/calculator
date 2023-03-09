@@ -28,6 +28,10 @@ interface CalculatorAction {
   payload?: string;
 }
 
+type NoUndefinedField<T> = {
+  [P in keyof T]: NoUndefinedField<NonNullable<T[P]>>;
+};
+
 function reducer(state: CalculatorState, action: CalculatorAction) {
   const {
     state: { currentOperand, previousOperand, operator },
