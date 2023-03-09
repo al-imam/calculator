@@ -47,6 +47,12 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
         currentOperand: (currentOperand ?? "") + payload,
       };
 
+    case "delete":
+      return {
+        ...state,
+        currentOperand: currentOperand.slice(0, -1),
+      };
+
     case "clear":
       return initialValue;
 
