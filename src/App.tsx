@@ -40,6 +40,8 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
         previousOperand,
         operator,
       };
+    default:
+      throw new Error(`No action called ${type}`);
   }
 }
 
