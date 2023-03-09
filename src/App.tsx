@@ -48,9 +48,11 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
       };
 
     case "delete":
+      if (currentOperand === null) return state;
+
       return {
         ...state,
-        currentOperand: currentOperand!.slice(0, -1),
+        currentOperand: currentOperand.slice(0, -1),
       };
 
     case "clear":
