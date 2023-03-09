@@ -10,6 +10,8 @@ interface CalculatorState {
   operator: StringOrNull;
 }
 
+type ActionType = "add-digit" | "clear" | "delete" | "calculate" | "operator";
+
 const initialValue: CalculatorState = {
   currentOperand: null,
   previousOperand: null,
