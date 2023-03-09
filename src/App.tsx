@@ -9,12 +9,14 @@ interface CalculatorState {
   currentOperand: StringOrNull;
   previousOperand: StringOrNull;
   operator: Operator;
+  override: boolean;
 }
 
 const initialValue: CalculatorState = {
   currentOperand: null,
   previousOperand: null,
   operator: null,
+  override: false,
 };
 
 type ActionType =
