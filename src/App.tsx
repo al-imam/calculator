@@ -60,12 +60,16 @@ function calculate(state: NoUndefinedField<CalculatorState>): number {
 
 function reducer(state: CalculatorState, action: CalculatorAction) {
   const {
-    state: { currentOperand, previousOperand, operator },
+    state: { currentOperand, previousOperand, operator, override },
     action: { type, payload },
   } = { state, action };
 
   switch (type) {
     case "add-digit":
+      if (override) {
+        return { ...state, override: false, currentOperand: payload as string };
+      }
+
       if (currentOperand === "0" && payload !== ".") {
         return {
           ...state,
