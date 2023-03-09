@@ -110,7 +110,13 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
       };
 
     case "calculate":
-      if (Object.values(state).includes(null)) return state;
+      if (
+        operator === null ||
+        parseFloat(currentOperand || "0") === 0 ||
+        previousOperand === null
+      ) {
+        return state;
+      }
 
       return {
         operator: null,
