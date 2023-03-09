@@ -46,10 +46,9 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
 }
 
 function App() {
-  const [{ currentOperand, previousOperand, operator }, dispatch] = useReducer(
-    reducer,
-    initialValue
-  );
+  const [{ currentOperand, previousOperand, operator }, dispatch] = useReducer<
+    (state: CalculatorState, action: CalculatorAction) => CalculatorState
+  >(reducer, initialValue);
 
   return (
     <main className="mt-12 grid justify-center gap-2 grid-template">
