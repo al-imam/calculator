@@ -50,6 +50,13 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
     case "delete":
       if (currentOperand === null) return state;
 
+      if (currentOperand.length === 1) {
+        return {
+          ...state,
+          currentOperand: null,
+        };
+      }
+
       return {
         ...state,
         currentOperand: currentOperand.slice(0, -1),
