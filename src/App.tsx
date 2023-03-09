@@ -50,7 +50,7 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
     case "delete":
       return {
         ...state,
-        currentOperand: currentOperand.slice(0, -1),
+        currentOperand: currentOperand!.slice(0, -1),
       };
 
     case "clear":
@@ -79,7 +79,7 @@ function App() {
         value="C"
         span="col-span-2"
       />
-      <Button click={() => {}} value="DE" />
+      <Button click={() => dispatch({ type: "delete" })} value="DE" />
       <Button click={() => {}} value="÷" span="font-mono" />
       <Button
         click={() => dispatch({ type: "add-digit", payload: "1" })}
