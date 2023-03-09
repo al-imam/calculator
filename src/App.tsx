@@ -42,6 +42,15 @@ function calculate(state: NoUndefinedField<CalculatorState>): number {
     case "+":
       return previousOperand + currentOperand;
 
+    case "-":
+      return previousOperand - currentOperand;
+
+    case "÷":
+      return previousOperand / currentOperand;
+
+    case "*":
+      return previousOperand * currentOperand;
+
     default:
       throw new Error(`Can not compute ${operator}`);
   }
