@@ -96,7 +96,11 @@ function App() {
         span="col-span-2"
       />
       <Button click={() => dispatch({ type: "delete" })} value="DE" />
-      <Button click={() => {}} value="÷" span="font-mono" />
+      <Button
+        click={() => dispatch({ type: "add-operator", payload: "÷" })}
+        value="÷"
+        span="font-mono"
+      />
       <Button
         click={() => dispatch({ type: "add-digit", payload: "1" })}
         value="1"
@@ -109,7 +113,11 @@ function App() {
         click={() => dispatch({ type: "add-digit", payload: "3" })}
         value="3"
       />
-      <Button click={() => {}} value="*" span="font-mono" />
+      <Button
+        click={() => dispatch({ type: "add-operator", payload: "*" })}
+        value="*"
+        span="font-mono"
+      />
       <Button
         click={() => dispatch({ type: "add-digit", payload: "4" })}
         value="4"
@@ -122,7 +130,11 @@ function App() {
         click={() => dispatch({ type: "add-digit", payload: "6" })}
         value="6"
       />
-      <Button click={() => {}} value="-" span="font-mono" />
+      <Button
+        click={() => dispatch({ type: "add-operator", payload: "-" })}
+        value="-"
+        span="font-mono"
+      />
       <Button
         click={() => dispatch({ type: "add-digit", payload: "7" })}
         value="7"
@@ -135,7 +147,11 @@ function App() {
         click={() => dispatch({ type: "add-digit", payload: "9" })}
         value="9"
       />
-      <Button click={() => {}} value="+" span="font-mono" />
+      <Button
+        click={() => dispatch({ type: "add-operator", payload: "+" })}
+        value="+"
+        span="font-mono"
+      />
       <Button
         click={() => dispatch({ type: "add-digit", payload: "." })}
         value="."
