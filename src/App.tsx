@@ -40,6 +40,10 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
         previousOperand,
         operator,
       };
+
+    case "clear":
+      return initialValue;
+
     default:
       throw new Error(`No action called ${type}`);
   }
