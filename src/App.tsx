@@ -25,11 +25,22 @@ type ActionType =
 
 interface CalculatorAction {
   type: ActionType;
-  payload: Partial<CalculatorState>;
+  payload: string;
 }
 
 function reducer(state: CalculatorState, action: CalculatorAction) {
-  return state;
+  const {
+    state: { currentOperand, previousOperand, operator },
+    action: { type, payload },
+  } = { state, action };
+  switch (type) {
+    case "add-digit":
+      return {
+        currentOperand: (currentOperand ?? "") + payload,
+        previousOperand,
+        operator,
+      };
+  }
 }
 
 function App() {
@@ -49,7 +60,10 @@ function App() {
       <Button click={() => {}} value="C" span="col-span-2" />
       <Button click={() => {}} value="DE" />
       <Button click={() => {}} value="÷" span="font-mono" />
-      <Button click={() => {}} value="1" />
+      <Button
+        click={() => dispatch({ type: "add-digit", payload: "1" })}
+        value="1"
+      />
       <Button click={() => {}} value="2" />
       <Button click={() => {}} value="3" />
       <Button click={() => {}} value="*" span="font-mono" />
