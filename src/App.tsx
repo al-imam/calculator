@@ -57,6 +57,8 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
         };
       }
 
+      if (currentOperand === "0." || currentOperand === "0") return state;
+
       return {
         operator: payload as string,
         previousOperand: currentOperand,
