@@ -162,14 +162,6 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
   }
 }
 
-function showCurrent(c: string | null) {
-  if (c === null) return null;
-  if (!c.includes(".")) return c;
-  const [_, float] = c.split(".");
-  if (float.length > 8) return parseFloat(c).toFixed(8);
-  return c;
-}
-
 function App() {
   const [{ currentOperand, previousOperand, operator }, dispatch] = useReducer<
     (state: CalculatorState, action: CalculatorAction) => CalculatorState
@@ -181,7 +173,7 @@ function App() {
         <P classes="text-xl text-gray-100">
           {previousOperand} {operator}
         </P>
-        <P classes="text-4xl text-white">{showCurrent(currentOperand)}</P>
+        <P classes="text-4xl text-white">{currentOperand}</P>
       </section>
       <Button
         click={() => dispatch({ type: "clear" })}
