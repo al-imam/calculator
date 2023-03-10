@@ -111,7 +111,7 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
       }
 
       return {
-        override: true,
+        ...state,
         operator: payload as Exclude<Operator, null>,
         previousOperand: currentOperand,
         currentOperand: null,
