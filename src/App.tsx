@@ -31,6 +31,10 @@ interface CalculatorAction {
   payload?: string;
 }
 
+interface DefaultAction {
+  type: "clear" | "delete" | "calculate";
+}
+
 type NoUndefinedField<T> = {
   [P in keyof T]: NoUndefinedField<NonNullable<T[P]>>;
 };
