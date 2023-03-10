@@ -40,6 +40,11 @@ interface AddDigitAction {
   payload: string;
 }
 
+interface AddOperandAction {
+  type: "add-operator";
+  payload: Operator;
+}
+
 type NoUndefinedField<T> = {
   [P in keyof T]: NoUndefinedField<NonNullable<T[P]>>;
 };
