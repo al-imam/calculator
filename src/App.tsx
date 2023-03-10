@@ -35,6 +35,11 @@ interface DefaultAction {
   type: "clear" | "delete" | "calculate";
 }
 
+interface AddDigitAction {
+  type: "add-digit";
+  payload: string;
+}
+
 type NoUndefinedField<T> = {
   [P in keyof T]: NoUndefinedField<NonNullable<T[P]>>;
 };
