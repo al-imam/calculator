@@ -31,20 +31,6 @@ interface CalculatorAction {
   payload?: string;
 }
 
-interface DefaultAction {
-  type: "clear" | "delete" | "calculate";
-}
-
-interface AddDigitAction {
-  type: "add-digit";
-  payload: string;
-}
-
-interface AddOperandAction {
-  type: "add-operator";
-  payload: Operator;
-}
-
 type NoUndefinedField<T> = {
   [P in keyof T]: NoUndefinedField<NonNullable<T[P]>>;
 };
