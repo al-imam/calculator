@@ -103,8 +103,8 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
         return {
           override: true,
           operator: payload as Exclude<Operator, null>,
-          previousOperand: null,
-          currentOperand: `${calculate(
+          currentOperand: null,
+          previousOperand: `${calculate(
             state as NoUndefinedField<CalculatorState>
           )}`,
         };
