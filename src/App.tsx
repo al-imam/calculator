@@ -165,8 +165,8 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
 function roundNumberToHaveANiceDefaultStringRepresentation(
   num: string | null
 ): string | null {
-  if (num === null) return num;
-  const number = parseFloat(num);
+  if (!parseFloat(num!)) return num;
+  const number = parseFloat(num!);
   const integerDigits = Math.floor(Math.log10(Math.abs(number)) + 1);
   const multi = 10 ** (10 - integerDigits);
   return `${Math.round(number * multi) / multi}`;
@@ -183,7 +183,9 @@ function App() {
         <P classes="text-xl text-gray-100">
           {previousOperand} {operator}
         </P>
-        <P classes="text-4xl text-white">{currentOperand}</P>
+        <P classes="text-4xl text-white">
+          {roundNumberToHaveANiceDefaultStringRepresentation(currentOperand)}
+        </P>
       </section>
       <Button
         click={() => dispatch({ type: "clear" })}
