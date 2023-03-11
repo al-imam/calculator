@@ -168,8 +168,8 @@ function App() {
   >(reducer, initialValue);
 
   return (
-    <main className="mt-12 grid justify-center gap-2 grid-template">
-      <section className="col-span-full bg-blue-400 flex flex-col justify-center items-end p-4 rounded">
+    <main className="grid justify-center gap-2 mt-12 grid-template">
+      <section className="flex flex-col items-end justify-center p-4 bg-blue-400 rounded col-span-full">
         <P classes="text-xl text-gray-100">
           {previousOperand} {operator}
         </P>
