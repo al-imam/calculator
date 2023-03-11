@@ -162,6 +162,16 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
   }
 }
 
+function roundNumberToHaveANiceDefaultStringRepresentation(
+  num: string | null
+): string | null {
+  if (num === null) return num;
+  const number = parseFloat(num);
+  const integerDigits = Math.floor(Math.log10(Math.abs(number)) + 1);
+  const multi = 10 ** (10 - integerDigits);
+  return `${Math.round(number * multi) / multi}`;
+}
+
 function App() {
   const [{ currentOperand, previousOperand, operator }, dispatch] = useReducer<
     (state: CalculatorState, action: CalculatorAction) => CalculatorState
