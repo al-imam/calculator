@@ -169,7 +169,7 @@ function App() {
 
   return (
     <main className="grid justify-center gap-2 mt-12 grid-template">
-      <section className="flex flex-col items-end justify-center p-4 bg-blue-400 rounded col-span-full">
+      <section className="flex flex-col items-end justify-center p-4 bg-blue-400 rounded shadow-md col-span-full">
         <P classes="text-xl text-gray-100">
           {previousOperand} {operator}
         </P>
