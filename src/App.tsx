@@ -79,7 +79,7 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
 
       if (payload === ".") {
         if (currentOperand === null) return { ...state, currentOperand: "0." };
-        if (currentOperand && currentOperand.includes(".")) return state;
+        if (currentOperand.includes(".")) return state;
       }
 
       return {
