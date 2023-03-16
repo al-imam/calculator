@@ -13,14 +13,14 @@ export default defineConfig({
         short_name: "calculator",
         icons: [
           {
-            src: "/calculator.svg",
+            src: "/android-chrome-192x192.png",
             sizes: "192x192",
-            type: "image/svg",
+            type: "image/png",
           },
           {
-            src: "/calculator.svg",
+            src: "/android-chrome-512x512.png",
             sizes: "512x512",
-            type: "image/svg",
+            type: "image/png",
             purpose: "maskable",
           },
         ],
