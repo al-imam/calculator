@@ -165,11 +165,11 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
 function roundNumberToHaveANiceDefaultStringRepresentation(
   num: string | null
 ): string | null {
-  if (!parseFloat(num!)) return num;
-  const number = parseFloat(num!);
-  const integerDigits = Math.floor(Math.log10(Math.abs(number)) + 1);
-  const multi = 10 ** (10 - integerDigits);
-  return `${Math.round(number * multi) / multi}`;
+  if (num === null) return num;
+  if (!num.includes(".")) return num;
+  const [first, second] = num.split(".");
+  if (second.length > 8) return parseFloat(num).toFixed(8);
+  return num;
 }
 
 function App() {
