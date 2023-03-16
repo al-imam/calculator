@@ -183,7 +183,7 @@ function App() {
         <P classes="text-xl text-gray-100">
           {previousOperand} {operator}
         </P>
-        <P classes="text-4xl text-white">
+        <P classes="text-3xl xs:text-4xl text-white">
           {roundNumberToHaveANiceDefaultStringRepresentation(currentOperand)}
         </P>
       </section>
