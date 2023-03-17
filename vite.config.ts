@@ -13,16 +13,28 @@ export default defineConfig({
         short_name: "calculator",
         icons: [
           {
-            src: "/android-chrome-192x192.png",
+            src: "manifest-icon-192.maskable.png",
             sizes: "192x192",
             type: "image/png",
             purpose: "any",
           },
           {
-            src: "/android-chrome-512x512.png",
+            src: "manifest-icon-192.maskable.png",
+            sizes: "192x192",
+            type: "image/png",
+            purpose: "maskable",
+          },
+          {
+            src: "manifest-icon-512.maskable.png",
             sizes: "512x512",
             type: "image/png",
             purpose: "any",
+          },
+          {
+            src: "manifest-icon-512.maskable.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "maskable",
           },
         ],
         theme_color: "#ffffff",
