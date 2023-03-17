@@ -168,7 +168,7 @@ function roundNumberToHaveANiceDefaultStringRepresentation(
   if (num === null) return num;
   if (!num.includes(".")) return num;
   const [first, second] = num.split(".");
-  if (second.length > 8) return parseFloat(num).toFixed(8);
+  if (second.length > 10) return parseFloat(num).toFixed(10);
   return num;
 }
 
@@ -184,12 +184,14 @@ function App() {
           {previousOperand} {operator}
         </P>
         <P
-          classes={`text-3xl xs:text-4xl text-white ${
+          classes={`text-white ${
             (
               roundNumberToHaveANiceDefaultStringRepresentation(
                 currentOperand
               ) ?? ""
-            ).length > 12 && "text-xl xs:text-2xl"
+            ).length > 12
+              ? "text-xl xs:text-2xl"
+              : "text-3xl xs:text-4xl"
           }`}
         >
           {roundNumberToHaveANiceDefaultStringRepresentation(currentOperand)}
