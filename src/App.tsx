@@ -67,7 +67,11 @@ function reducer(state: CalculatorState, action: CalculatorAction) {
   switch (type) {
     case "add-digit":
       if (override) {
-        return { ...state, override: false, currentOperand: payload as string };
+        return {
+          ...state,
+          override: false,
+          currentOperand: payload === "." ? "0." : (payload as string),
+        };
       }
 
       if (currentOperand === "0" && payload !== ".") {
