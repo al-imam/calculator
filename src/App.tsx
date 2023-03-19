@@ -189,10 +189,7 @@ function App() {
         ref={ref}
         className="flex flex-col items-end justify-center p-4 bg-blue-400 rounded shadow-md col-span-full"
       >
-        <P
-          sectionRef={ref.current as HTMLDivElement}
-          classes="text-xl text-gray-100"
-        >
+        <P classes="text-xl text-gray-100">
           {previousOperand} {operator}
         </P>
         <P

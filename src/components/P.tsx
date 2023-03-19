@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 const P: React.FunctionComponent<{
   children: React.ReactNode;
   classes?: string;
-  sectionRef: HTMLDivElement;
+  sectionRef?: HTMLDivElement;
   overflow?: string;
   notOverflow?: string;
 }> = ({ children, classes, sectionRef, overflow, notOverflow }) => {
@@ -19,12 +19,12 @@ const P: React.FunctionComponent<{
           getComputedStyle(sectionRef).paddingInline.replace("px", "")
         ) *
           2;
-
+      console.log({ myWith, parentWidth, isLarge });
       if (myWith > parentWidth) {
         setLarge(true);
-      } else {
-        setLarge(false);
+        return () => setLarge(false);
       }
+      setLarge(false);
     }
   });
 
