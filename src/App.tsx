@@ -176,6 +176,14 @@ function roundNumberToHaveANiceDefaultStringRepresentation(
   return num;
 }
 
+function getWidth() {
+  const match = window.matchMedia("(min-width: 25rem)");
+  if (match.matches) {
+    return 15;
+  }
+  return 12;
+}
+
 function App() {
   const [{ currentOperand, previousOperand, operator }, dispatch] = useReducer<
     (state: CalculatorState, action: CalculatorAction) => CalculatorState
