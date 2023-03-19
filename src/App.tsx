@@ -193,10 +193,15 @@ function App() {
           {previousOperand} {operator}
         </P>
         <P
-          sectionRef={ref.current as HTMLDivElement}
-          classes="text-white"
-          overflow="text-xl xs:text-2xl"
-          notOverflow=" text-3xl xs:text-4xl"
+          classes={`text-white ${
+            (
+              roundNumberToHaveANiceDefaultStringRepresentation(
+                currentOperand
+              ) ?? ""
+            ).length > 12
+              ? "text-xl xs:text-2xl"
+              : "text-3xl xs:text-4xl"
+          }`}
         >
           {roundNumberToHaveANiceDefaultStringRepresentation(currentOperand)}
         </P>
