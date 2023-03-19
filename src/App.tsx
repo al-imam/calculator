@@ -206,7 +206,7 @@ function App() {
               roundNumberToHaveANiceDefaultStringRepresentation(
                 currentOperand
               ) ?? ""
-            ).length > 12
+            ).length >= getWidth()
               ? "text-xl xs:text-2xl"
               : "text-3xl xs:text-4xl"
           }`}
