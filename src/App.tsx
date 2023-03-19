@@ -1,6 +1,6 @@
 import Button from "./components/Button";
 import P from "./components/P";
-import { useReducer } from "react";
+import { useReducer, useRef } from "react";
 
 type StringOrNull = string | null;
 type Operator = "+" | "-" | "÷" | "*" | null;
@@ -181,22 +181,25 @@ function App() {
     (state: CalculatorState, action: CalculatorAction) => CalculatorState
   >(reducer, initialValue);
 
+  const ref = useRef<HTMLDivElement>(null);
+
   return (
     <main className="grid justify-center gap-2 mt-12 grid-template">
-      <section className="flex flex-col items-end justify-center p-4 bg-blue-400 rounded shadow-md col-span-full">
-        <P classes="text-xl text-gray-100">
+      <section
+        ref={ref}
+        className="flex flex-col items-end justify-center p-4 bg-blue-400 rounded shadow-md col-span-full"
+      >
+        <P
+          sectionRef={ref.current as HTMLDivElement}
+          classes="text-xl text-gray-100"
+        >
           {previousOperand} {operator}
         </P>
         <P
-          classes={`text-white ${
-            (
-              roundNumberToHaveANiceDefaultStringRepresentation(
-                currentOperand
-              ) ?? ""
-            ).length > 12
-              ? "text-xl xs:text-2xl"
-              : "text-3xl xs:text-4xl"
-          }`}
+          sectionRef={ref.current as HTMLDivElement}
+          classes="text-white"
+          overflow="text-xl xs:text-2xl"
+          notOverflow=" text-3xl xs:text-4xl"
         >
           {roundNumberToHaveANiceDefaultStringRepresentation(currentOperand)}
         </P>
