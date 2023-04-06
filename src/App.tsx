@@ -192,7 +192,7 @@ function App() {
   const ref = useRef<HTMLDivElement>(null);
 
   return (
-    <main className="grid justify-center gap-2 mt-16 grid-template">
+    <main className="grid justify-center gap-2 grid-template">
       <section
         ref={ref}
         className="flex flex-col items-end justify-center p-4 bg-blue-400 rounded shadow-md col-span-full"

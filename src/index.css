@@ -28,12 +28,6 @@
     }
   }
 
-  @media all and (display-mode: fullscreen), (display-mode: standalone) {
-    #root {
-      padding-top: 3rem;
-    }
-  }
-
   .font-manrope {
     font-family: "Manrope", sans-serif;
   }
