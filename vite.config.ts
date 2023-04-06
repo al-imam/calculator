@@ -39,7 +39,7 @@ export default defineConfig({
         ],
         theme_color: "#ffffff",
         background_color: "#ffffff",
-        display: "standalone",
+        display: "fullscreen",
         start_url: "/",
         categories: ["tools", "program"],
         orientation: "portrait",
